@@ -26,13 +26,13 @@ def init_db():
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT NOT NULL,
             phone TEXT NOT NULL,
-            description TEXT
+            memo TEXT
         )
     ''')
     # 初期データの挿入 (任意)
     cursor.execute('''
-        INSERT INTO contacts (name, phone) VALUES
-        ('test user', '000-1111-2222')
+        INSERT INTO contacts (name, phone, memo) VALUES
+        ('test user', '000-1111-2222', 'あいうえお')
     ''')
     # 変更を保存し、接続を閉じる
     connection.commit()
@@ -57,15 +57,15 @@ async def home(request: Request):
 
 # 新しい連絡先を追加するエンドポイント
 @app.post("/addContact")
-async def addContact(request: Request, name: str=Form(...), phone: str=Form(...)):
+async def addContact(request: Request,name: str=Form(...), phone: str=Form(...), memo: str=Form(...)):
     # データベースに接続し、新しいレコードを挿入
     with sqlite3.connect(DB_NAME) as conn:
         logging.debug("addRecord")
         cursor = conn.cursor()
         cursor.execute('''
-            insert into contacts (name, phone) values
-            (?, ?)
-        ''', (name, phone))
+            insert into contacts (name, phone, memo) values
+            (?, ?, ?)
+        ''', (name, phone, memo))
         conn.commit()
     # ホームページにリダイレクト
     return RedirectResponse(url='/', status_code=303)

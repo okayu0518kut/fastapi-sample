@@ -10,7 +10,7 @@ List Page
 <!-- 連絡先リストを表示するための HTML リスト -->
 <ul>
     {% for item in items %}
-    <li>名前：{{ item[1] }}，電話番号{{ item[2] }}</li>
+    <li>名前：{{ item[1] }}，電話番号：{{ item[2] }}，memo：{{ item[3] }}</li>
     {% endfor %}
 </ul>
 

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+List Page
+{% endblock %}
+
+{% block content %}
+<h1>Contact List</h1>
+
+<ul>
+    {% for item in items %}
+    <li>名前：{{ item[1] }}，電話番号{{ item[2] }}</li>
+    {% endfor %}
+</ul>
+
+<a class="btn btn-secondary" href="{{ url_for('home') }}">Back to Home</a>
+{% endblock %}

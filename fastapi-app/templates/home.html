@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+top
+{% endblock %}
+
+{% block head %}
+<h1>top page</h1>
+{% endblock %}
+
+{% block content %}
+
+<body>
+    <h1>[fastapi sample] phone book app</h1>
+
+    <!-- レコードを追加 -->
+    <div class="m-5">
+        <h3>電話番号追加</h3>
+        <form action="{{ url_for('addContact') }}" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">名前</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">電話番号</label>
+                <input type="text" class="form-control" id="phone" name="phone" required>
+            </div>
+            <button type="submit" class="btn btn-primary">追加</button>
+        </form>
+
+        <!-- DBをリセット -->
+        <form action="{{ url_for('resetContactList') }}" method="post">
+            <button type="submit" class="btn btn-primary">電話帳をリセット</button>
+        </form>
+
+        <!-- リストを表示するリンク(見た目はボタン) -->
+        <a class="btn btn-primary" href="{{ url_for('showContactList') }}">電話帳をみる</a>
+    </div>
+</body>
+{% endblock %}

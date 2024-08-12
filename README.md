@@ -1,4 +1,11 @@
 # fastAPIとbootstrap5でつくった電話帳あぷり
+- docker-composeでアプリコンテナとnginxコンテナを管理する
+### Requirements
+- Docker
+### Getting Started
+```
+docker compose up
+```
 ### 技術スタック:
 - フロントエンド: BootstrapでスタイリングしたHTML/CSS/JavaScript
 - バックエンド: FastAPI

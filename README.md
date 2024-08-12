@@ -3,9 +3,11 @@
 ### Requirements
 - Docker
 ### Getting Started
+1. コンテナ起動
 ```
-docker compose up
+$ docker compose up
 ```
+2. http://127.0.0.1 にアクセスしてアプリを利用
 ### 技術スタック:
 - フロントエンド: BootstrapでスタイリングしたHTML/CSS/JavaScript
 - バックエンド: FastAPI

@@ -4,7 +4,7 @@ services:
     volumes:
       - ./fastapi-app:/myapp
     ports:
-      - "3001:3000"
+      - "3001:${FASTAPI_PORT}"
 
   nginx:
     image: nginx:latest

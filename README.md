@@ -1,6 +1,6 @@
 
 
-# 📞 電話帳アプリ: FastAPI & Bootstrap 5
+# 📞 電話帳アプリ: FastAPI & Bootstrap 5📞
 
 [![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap)](https://getbootstrap.com/)
